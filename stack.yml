@@ -1,0 +1,50 @@
+name: mautic
+icon: mautic
+docs: https://wodby.com/docs/2.0/stacks/catalog/mautic/
+title: Mautic
+
+services:
+- name: mautic
+  title: Mautic
+  service: mautic
+  required: true
+  derivatives:
+  - name: cron
+    service: mautic-cron
+  - name: worker
+    service: mautic-worker
+  volumes:
+  - name: files
+    size: 20
+  links:
+  - name: db
+    service: mariadb
+  - name: files
+    service: files-nfs
+  - name: sendmail
+    service: opensmtpd
+
+- name: mariadb
+  title: MariaDB
+  service: mariadb
+  # Mautic 7 needs MariaDB 10.11 or later.
+  options:
+  - version: '12.3'
+  - version: '11.8'
+    default: true
+  - version: '11.4'
+  volumes:
+  - name: data
+    size: 10
+
+- name: files-nfs
+  title: Files NFS storage
+  service: nfs-provisioner
+  volumes:
+  - name: data
+    size: 25
+
+- name: opensmtpd
+  required: false
+  title: OpenSMTPD
+  service: opensmtpd
