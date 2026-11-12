@@ -2,6 +2,12 @@ name: mautic
 icon: mautic
 docs: https://wodby.com/docs/2.0/stacks/catalog/mautic/
 title: Mautic
+# The main stack of the Mautic variants: the catalog shows this next to the
+# link to it on the variants' pages.
+variantDescription: >-
+  Choose this when you don't need your own plugins or themes: it runs the
+  prebuilt Mautic image that Wodby keeps up to date, with no Git repository to
+  maintain and no builds.
 
 services:
 - name: mautic
