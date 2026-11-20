@@ -2,6 +2,7 @@ name: mautic
 icon: mautic
 docs: https://wodby.com/docs/2.0/stacks/catalog/mautic/
 title: Mautic
+category: collaboration
 # The main stack of the Mautic variants: the catalog shows this next to the
 # link to it on the variants' pages.
 variantDescription: >-
