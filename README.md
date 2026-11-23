@@ -9,7 +9,9 @@ composition for Mautic.
 
 ## Stack contract
 
+- [Mautic stack on Wodby](https://wodby.com/stacks/mautic)
 - [Browse Wodby application stacks](https://wodby.com/stacks)
+- [Mautic stack guide](https://wodby.com/docs/2.0/stacks/catalog/mautic/)
 - [Wodby stack documentation](https://wodby.com/docs/2.0/stacks/)
 - [Stack manifest reference](https://wodby.com/docs/2.0/stacks/template/)
 
@@ -17,15 +19,15 @@ composition for Mautic.
 
 - [Mautic service](https://github.com/wodby/service-mautic)
 - [MariaDB service](https://github.com/wodby/service-mariadb)
-- [NFS provisioner service](https://github.com/wodby/service-nfs-provisioner)
+- [Ganesha NFS provisioner service](https://github.com/wodby/service-nfs-provisioner)
 - [OpenSMTPD service](https://github.com/wodby/service-opensmtpd)
 
 ## What's included
 
 | Component / service | Default configuration |
 | --- | --- |
-| Mautic<br>`mautic` | required; enabled by default; derivatives: `cron`, `worker`; volumes: `files` 20 GB; links: `db` → `mariadb`, `files` → `files-nfs`, `sendmail` → `opensmtpd` |
-| MariaDB<br>`mariadb` | optional; enabled by default; versions: `12.3`, `11.8` (default), `11.4`; volumes: `data` 10 GB |
+| Mautic<br>`mautic` | required; enabled by default; volumes: `files` 20 GB; links: `db` → `mariadb`, `files` → `files-nfs`, `sendmail` → `opensmtpd` |
+| MariaDB<br>`mariadb` | optional; enabled by default; volumes: `data` 10 GB |
 | Files NFS storage<br>`files-nfs` | optional; enabled by default; volumes: `data` 25 GB |
 | OpenSMTPD<br>`opensmtpd` | optional; enabled by default |
 
